@@ -88,7 +88,7 @@ public class MainTest extends TestCase {
         assertEquals(expected.toString(), actual.toString());    
         
         //Requirement 10
-        assertTrue(Utilities.isAddressInUse(port));
+        assertTrue(Application.started);
         Utilities.send(server, port, "terminate\n");
         Thread.sleep(1000);
         assertFalse(Application.started); 
@@ -97,23 +97,5 @@ public class MainTest extends TestCase {
             app.stop();
         }
         
-    }
-
-    //@Test
-    public void termination() throws Exception {
-        //Use another port since the port as part of address could still not be released already in the following tests
-        port=9000; 
-        
-        Application app=new Application(5, port);
-        Utilities.runServer(app, port);
-        
-        while (!Application.started) {
-            Thread.sleep(100);
-        }
-        assertTrue(Application.started);
-        Utilities.send(server, port, "terminate\n");
-        Thread.sleep(1000);
-        assertFalse(Application.started);  
- 
     }
 }
