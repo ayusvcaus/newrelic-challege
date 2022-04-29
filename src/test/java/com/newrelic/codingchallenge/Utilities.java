@@ -99,13 +99,4 @@ public class Utilities {
         br.close();
         return actual;
     }
-    
-    public static boolean isAddressInUse(int port) {
-        try {
-            new ServerSocket(port).close();
-            return false;
-        } catch (Exception e) {
-        }
-        return true;
-    }
 }
