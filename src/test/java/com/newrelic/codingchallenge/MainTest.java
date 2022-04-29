@@ -1,20 +1,10 @@
 package com.newrelic.codingchallenge;
 
-import java.net.Socket;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.FileReader;
-
 import java.util.Set;
-import java.util.HashSet;
 import java.util.TreeSet;
 
 import org.junit.Test;
 import junit.framework.TestCase;
-import org.junit.Rule;
-import static junit.framework.TestCase.fail;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MainTest extends TestCase {
     
